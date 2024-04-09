@@ -51,18 +51,18 @@ import {
   
     return (
       <Select onValueChange={onChangeHandler} defaultValue={value}>
-        <SelectTrigger className="select-field rounded-none">
+        <SelectTrigger className="select-field">
           <SelectValue placeholder="Category" />
         </SelectTrigger>
         <SelectContent>
           {categories.length > 0 && categories.map((category) => (
-            <SelectItem key={category._id} value={category._id} className="select-item p-regular-14 rounded-none">
+            <SelectItem key={category._id} value={category._id} className="select-item p-regular-14">
               {category.name}
             </SelectItem>
           ))}
   
           <AlertDialog>
-            <AlertDialogTrigger className="p-medium-14 flex w-full  py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500">Add new category</AlertDialogTrigger>
+            <AlertDialogTrigger className="p-medium-14 flex w-full rounded-none py-3 pl-8 text-yellow-500 hover:bg-primary-50 focus:text-yellow-500">Add new category</AlertDialogTrigger>
             <AlertDialogContent className="bg-white">
               <AlertDialogHeader>
                 <AlertDialogTitle>New Category</AlertDialogTitle>

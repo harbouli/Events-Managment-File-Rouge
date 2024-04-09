@@ -4,11 +4,6 @@ import Order from "../database/models/order.model";
 import { handleError } from "../utils";
 
 
-
-
-
-
-
 export const createOrder = async (order: CreateOrderParams) => {
   try {
     await connectToDatabase();

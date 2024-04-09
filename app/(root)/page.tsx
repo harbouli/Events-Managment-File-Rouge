@@ -5,7 +5,11 @@ import image1 from "../../public/assets/images/main-stage.png";
 import image2 from "../../public/assets/images/music-fanclub.png";
 import image3 from "../../public/assets/images/people-dancing.png";
 import image4 from "../../public/assets/images/people-taking-part.png";
-import CategoryFilter from "@/components/shared/CategoryFilter";
+import casa from "../../public/assets/images/casa.jpg";
+import agadir from "../../public/assets/images/agadir.jpg";
+import marakech from "../../public/assets/images/marakech.jpg";
+import tangier from "../../public/assets/images/tanger.jpg";
+import rabat from "../../public/assets/images/rabat.jpg";
 import imageFamily from "../../public/assets/images/famille.png";
 import affairesImage from "../../public/assets/images/affaires.png";
 import nourritureImage from "../../public/assets/images/nourriture.png";
@@ -13,11 +17,10 @@ import santeImage from "../../public/assets/images/sante.png";
 import beauteImage from "../../public/assets/images/beaute.jpg";
 import toto from "../../public/assets/images/elgrandetoto.png";
 import sourire from "../../public/assets/images/sourire.png";
-import Card from "@/components/shared/Card";
 import Search from "@/components/shared/Search";
-
 import Image from "next/image";
-import CategoryCards from "@/components/shared/CategoryCards";
+import EventCard from "@/components/shared/EventCard";
+import ProductCard from "@/components/shared/ProductCard";
 export default function Home() {
   return (
     <>
@@ -33,12 +36,12 @@ export default function Home() {
               for effortless event management. Whether you&apos;re organizing a
               corporate conference, a community fundraiser or any event else.
             </p>
-            <Button className="rounded-none sm:w-fit">
-              <Link href="#events">Explore Now</Link>
+            <Button variant="link">
+              <Link href="/events">Explore Now</Link>
             </Button>
           </div>
           <div className=" hidden  md:flex items-center justify-center ">
-            <div className="mx-auto max-w-6xl px-6 lg:max-w-lg ">
+            <div className="mx-auto px-6 lg:max-w-[42rem] ">
               <div className="flex [&:hover>div]:w-16 [&>div:hover]:w-[30rem]">
                 <div className="group relative h-96 w-[28rem] cursor-pointer overflow-hidden shadow-lg shadow-black/30 transition-all duration-200 ">
                   <img
@@ -80,7 +83,10 @@ export default function Home() {
       >
         <h2 className="h2-bold text-blue-950">Recommended Events</h2>
         <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12">
-          <a className="duration-500 hover:scale-105 relative flex flex-col justify-end overflow-hidden px-8 pb-8 pt-40 w-full h-full mb-10 mx-auto">
+          <a
+            href="#"
+            className="duration-500 hover:scale-105 relative flex flex-col justify-end overflow-hidden px-8 pb-8 pt-40 w-full h-full mb-10 mx-auto"
+          >
             <Image
               src={toto.src}
               alt="elgrandetoto tour"
@@ -94,7 +100,10 @@ export default function Home() {
             </h3>
           </a>
           {/* Second article */}
-          <article className="duration-500 hover:scale-105 relative flex flex-col justify-end overflow-hidden px-8 pb-8 pt-40 w-full mx-auto mb-20 h-full">
+          <a
+            href="#"
+            className="duration-500 hover:scale-105 relative flex flex-col justify-end overflow-hidden px-8 pb-8 pt-40 w-full mx-auto mb-20 h-full"
+          >
             <Image
               src={sourire.src}
               alt="University of Southern California"
@@ -104,7 +113,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
             <h3 className="z-10 mt-3 text-3xl font-bold text-white">Rabat</h3>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -117,10 +126,57 @@ export default function Home() {
         </h2>
         <div className="flex w-full flex-col gap-5 md:flex-row">
           <Search />
-          <CategoryFilter />
         </div>
-        <div className="flex w-full flex-col gap-5 md:flex-row">
-          <Card />
+        <div
+          id="Projects"
+          className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-[42px] mt-10 mb-5"
+        >
+          {[
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 1",
+              price: "$149",
+              originalPrice: "$199",
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 2",
+              price: "$149",
+              originalPrice: "$199",
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 1",
+              price: "$149",
+              originalPrice: "$199",
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 2",
+              price: "$149",
+              originalPrice: "$199",
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 1",
+              price: "$149",
+              originalPrice: "$199",
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              productName: "Product Name 2",
+              price: "$149",
+              originalPrice: "$199",
+            },
+          ].map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
         </div>
       </section>
       <section
@@ -139,7 +195,7 @@ export default function Home() {
             { src: nourritureImage, alt: "Food", category: "Food" },
             { src: beauteImage, alt: "Beauty", category: "Beauty" },
           ].map((image, index) => (
-            <CategoryCards
+            <EventCard
               key={index}
               src={image.src}
               alt={image.alt}
@@ -154,18 +210,57 @@ export default function Home() {
       >
         <h2 className="h2-bold text-blue-950">Browse events by city</h2>
 
-        <div className="flex">
-          <div className="w-full">
-            <Image src={image1.src} width={400} height={400} alt="nothing" />
-          </div>
-          <div className="grid gap-x-8 gap-y-4 grid-cols-2">
-          <Image src={image1.src} width={300} height={300} alt="nothing" />
-          <Image src={image1.src} width={300} height={300} alt="nothing" />
-          <Image src={image1.src} width={300} height={300} alt="nothing" />
-          <Image src={image1.src} width={300} height={300} alt="nothing" />
-
-            
-
+        <div className="flex gap-2">
+          <a href="#" className="w-1/2">
+            <Image
+              src={agadir.src}
+              width={200}
+              height={200}
+              alt="nothing"
+              className="w-full h-full object-cover"
+            />
+          </a>
+          <div className="w-1/2 grid grid-cols-2 gap-2">
+            <a href="#" className="relative w-full aspect-w-1 aspect-h-1">
+              {" "}
+              <Image
+                src={casa.src}
+                width={300}
+                height={300}
+                alt="nothing"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </a>
+            <a href="#" className="relative w-full aspect-w-1 aspect-h-1">
+              {" "}
+              <Image
+                src={marakech.src}
+                width={300}
+                height={300}
+                alt="nothing"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </a>
+            <a href="#" className="relative w-full aspect-w-1 aspect-h-1">
+              {" "}
+              <Image
+                src={rabat.src}
+                width={300}
+                height={300}
+                alt="nothing"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </a>
+            <a href="#" className="relative w-full aspect-w-1 aspect-h-1">
+              {" "}
+              <Image
+                src={tangier.src}
+                width={300}
+                height={300}
+                alt="nothing"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </a>
           </div>
         </div>
       </section>
